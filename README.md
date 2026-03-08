@@ -1,6 +1,9 @@
 # Smart Todo App
 A modern responsive Todo application built using HTML, CSS, JavaScript.
 
+## Live Demo
+[View Live Porject](https://sabeena-yellutla.github.io/smart-todo-app/)
+
 ## Features: 
 - Add new tasks
 - Edit tasks
