@@ -1,24 +1,27 @@
-Smart Todo App
+# Smart Todo App
 A modern responsive Todo application built using HTML, CSS, JavaScript.
 
-Features
-Add new tasks
-Edit tasks
-Delete tasks
-Mark tasks as completed
-Filter tasks (All / Active / Completed)
-Sort tasks (Newest / Oldest)
-Search tasks
-Debounced search for persistance
-LocalStorage persistance
-Responsive design
-Smooth UI animations
-
-Technologies Used
+## Features: 
+- Add new tasks
+- Edit tasks
+- Delete tasks
+- Mark tasks as completed
+- Filter tasks (All / Active / Completed)
+- Sort tasks (Newest / Oldest)
+- Search tasks
+- Debounced search for persistance
+- LocalStorage persistance
+- Responsive design
+- Smooth UI animations
+  
+## Technologies Used:
 HTML
 CSS
 JavaScript
 LocalStorage
 
-Author
+Screenshot:
+![Todo App Screenshot](todo-preview.png)
+
+Author:
 Sabeena Yellutla
