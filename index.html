@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="todo-app">
+
+            <header class="todo-header">
+                <h1>To-Do App
+                    <span class="todo-icon"><i class="fa-solid fa-list"></i></span>
+                </h1>
+            </header>
+
+            <p id="input-error" class="hidden"></p>
+
+            <div class="todo-input-container">
+                <input type="text" id="todo-input" placeholder="Add a new task..." autocomplete="off">
+                <button id="add-btn">
+                    <span class="add-text">Add</span>
+                    <span class="add-icon">+</span>
+                </button>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <div class="sort-search-container">
+                <div class="sort-container">
+                    <select class="sort-selectors">
+                        <option value="" disabled>Choose to sort</option>
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search todos..." autocomplete="off">
+                    <button id="search-toggle">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+            </div>
+
+            <ul class="todoList" id="todo-list"></ul>
+
+            <div class="todo-footer">
+                <div>
+                    <span id="todo-completed"></span>
+                    <span id="todo-notcompleted"></span>
+                </div>
+
+                <button id="clear-completed">Clear Completed</button>
+            </div>
+
+            <div class="clearAll">
+                <button id="clear-all">Clear All</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
