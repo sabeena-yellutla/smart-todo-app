@@ -308,6 +308,7 @@ sortSelectors.addEventListener("change", (event) => {
     renderTodos();
 })
 
+// Toggle search icon
 searchToggle.addEventListener("click", () => {
     const isOpen = searchInput.classList.toggle("active");
     if (isOpen) {
@@ -321,6 +322,14 @@ searchToggle.addEventListener("click", () => {
     }
 })
 
+// Press / to search tasks
+document.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement.tagName !== "INPUT") {
+        event.preventDefault();
+        searchInput.classList.add("active");
+        searchInput.focus();
+    }
+})
 searchInput.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         event.preventDefault();
