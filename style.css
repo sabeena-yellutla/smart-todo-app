@@ -445,6 +445,9 @@
  }
 
  @media (max-width: 600px) {
+     body {
+         align-items: flex-start;
+     }
 
      .add-text {
          display: none;
