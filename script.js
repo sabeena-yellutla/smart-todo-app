@@ -18,7 +18,6 @@ const filters = document.querySelector(".filters");
 
 const sortSelectors = document.querySelector(".sort-selectors");
 
-const searchToggle = document.querySelector("#search-toggle");
 const searchInput = document.querySelector("#search-input");
 
 // Data state (source of truth) -- UI depends on this state
@@ -26,8 +25,6 @@ let todos = [];
 let currentFilter = "all";
 let currentSort = "newest";
 let searchQuery = "";
-
-
 
 // Load saved todos from LocalStorage when page loads
 function loadFromLocalStorage() {
@@ -45,7 +42,10 @@ loadFromLocalStorage();
 function loadActiveBtn() {
     currentFilter = localStorage.getItem("currentFilter") || "all";
     const activeBtn = filters.querySelector(`[data-filter="${currentFilter}"]`);
-    activeBtn.classList.add("active");
+
+    if (activeBtn) {
+        activeBtn.classList.add("active");
+    }
     renderTodos();
 }
 loadActiveBtn();
@@ -117,8 +117,7 @@ function renderTodos() {
         filterTodos = todos.filter(todo => todo.isCompleted);
     }
 
-    let searchTodos;
-    searchTodos = filterTodos.filter(todo => {
+    const searchTodos = filterTodos.filter(todo => {
         return todo.text.toLowerCase().includes(searchQuery);
     })
 
@@ -183,11 +182,12 @@ function renderTodos() {
 
         li.append(checkbox, contentElement, editBtn, deleteBtn);
         todoList.appendChild(li);
-        const editInput = document.querySelector(".editInput");
-        if (editInput) {
-            editInput.focus();
-        }
     });
+
+    const editInput = document.querySelector(".editInput");
+    if (editInput) {
+        editInput.focus();
+    }
 
     const completedCount = todos.filter(todo => todo.isCompleted).length;
     const uncompletedCount = todos.filter(todo => !todo.isCompleted).length;
@@ -229,11 +229,20 @@ function toggleComplete(id) {
 
 // Remove a todo from state
 function deleteTodo(id) {
+    /* You store id in JS → copy it into DOM using data-id → use it later to find that exact element.
+    li.dataset.id = todo.id; in render function*/
+    const li = document.querySelector(`li[data-id="${id}"]`);
+    if (!li) return;
+
     if (!confirm("Are you sure to delete the task?")) return;
 
-    todos = todos.filter(todo => todo.id !== id);
-    saveToLocalStorage();
-    renderTodos();
+    li.classList.add("removing");
+
+    li.addEventListener("animationend", () => {
+        todos = todos.filter(todo => todo.id !== id);
+        saveToLocalStorage();
+        renderTodos();
+    });
 }
 // Enable edit mode for selected todo
 function editTodo(id) {
@@ -308,19 +317,7 @@ sortSelectors.addEventListener("change", (event) => {
     renderTodos();
 })
 
-// Toggle search icon
-searchToggle.addEventListener("click", () => {
-    const isOpen = searchInput.classList.toggle("active");
-    if (isOpen) {
-        searchInput.focus();
-    }
-    else {
-        searchInput.value = "";
-        searchQuery = "";
-        searchInput.blur();
-        renderTodos();
-    }
-})
+// Search Todos with Debounce
 
 // Press / to search tasks
 document.addEventListener("keydown", (event) => {

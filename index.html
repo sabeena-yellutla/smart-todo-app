@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do App</title>
+    <!-- Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Custom CSS Link -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="todo-app">
+        <main class="todo-app">
 
             <header class="todo-header">
                 <h1>To-Do App
@@ -21,21 +23,28 @@
 
             <p id="input-error" class="hidden"></p>
 
-            <div class="todo-input-container">
-                <input type="text" id="todo-input" placeholder="Add a new task..." autocomplete="off">
+            <section class="todo-input-container">
+                <input type="text" id="todo-input" placeholder="Add a new task..." autocomplete="off"
+                    aria-label="Add new task">
                 <button id="add-btn">
                     <span class="add-text">Add</span>
                     <span class="add-icon">+</span>
                 </button>
-            </div>
+            </section>
 
-            <div class="filters">
-                <button class="filter-btn" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="active">Active</button>
-                <button class="filter-btn" data-filter="completed">Completed</button>
-            </div>
+            <nav class="filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fa-solid fa-list-ul"></i>All
+                </button>
+                <button class="filter-btn" data-filter="active">
+                    <i class="fa-solid fa-circle"></i> Active
+                </button>
+                <button class="filter-btn" data-filter="completed">
+                    <i class="fa-solid fa-check"></i> Completed
+                </button>
+            </nav>
 
-            <div class="sort-search-container">
+            <section class="sort-search-container">
                 <div class="sort-container">
                     <select class="sort-selectors">
                         <option value="" disabled>Choose to sort</option>
@@ -46,28 +55,30 @@
 
                 <div class="search-container">
                     <input type="text" id="search-input" placeholder="Search todos..." autocomplete="off">
-                    <button id="search-toggle">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 </div>
-            </div>
+            </section>
 
-            <ul class="todoList" id="todo-list"></ul>
+            <section class="todo-section">
+                <ul class="todoList" id="todo-list"></ul>
+            </section>
 
-            <div class="todo-footer">
-                <div>
-                    <span id="todo-completed"></span>
-                    <span id="todo-notcompleted"></span>
+            <footer class="footer">
+                <div class="todo-footer">
+                    <div>
+                        <span id="todo-completed"></span>
+                        <span id="todo-notcompleted"></span>
+                    </div>
+
+                    <button id="clear-completed">Clear Completed</button>
                 </div>
 
-                <button id="clear-completed">Clear Completed</button>
-            </div>
+                <div class="clearAll">
+                    <button id="clear-all">Clear All</button>
+                </div>
+            </footer>
 
-            <div class="clearAll">
-                <button id="clear-all">Clear All</button>
-            </div>
-
-        </div>
+        </main>
     </div>
 
     <script src="script.js"></script>
