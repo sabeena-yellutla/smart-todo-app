@@ -1,7 +1,6 @@
  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
  :root {
-
      /* FONT */
      --font-main: "Noto Sans", sans-serif;
 
@@ -15,38 +14,38 @@
      --bg-body-gradient: #f8fafc;
 
      /* PRIMARY BUTTON */
-     --color-primary: #f3e8ff;
-     --color-primary-hover: #e9d5ff;
+     --color-primary: #ccfbf1;
+     --color-primary-hover: #99f6e4;
 
-     /* ACCENT / FOCUS */
-     --color-accent: #cdb4db;
-     --color-accent-light: #ede9fe;
+     /* ACCENT */
+     --color-accent: #0d9488;
+     --color-accent-light: #ccfbf1;
+
+     /* INPUT / BORDER */
+     --color-border: #cbd5e1;
 
      /* SURFACE COLORS */
      --color-card: #ffffff;
      --color-card-completed: #f8fafc;
 
-     /* INPUT / BORDER */
-     --color-border: #e2e8f0;
-
      /* TEXT COLORS */
-     --color-text-main: #111111;
-     --color-text-muted: #555555;
+     --color-text-main: #0f172a;
+     --color-text-muted: #64748b;
 
      /* ICON COLORS */
-     --color-success: #22c55e;
-     --color-success-hover: #15803d;
+     --color-success: #0d9488;
+     --color-success-hover: #0f766e;
 
-     --color-danger: #ef4444;
-     --color-danger-hover: #dc2626;
+     --color-danger: #e11d48;
+     --color-danger-hover: #be123c;
 
      /* CHECKBOX */
      --checkbox-border: #94a3b8;
 
      /* SHADOWS */
-     --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.06);
+     --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.08);
      --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.04);
-     --shadow-hover: 0 6px 14px rgba(0, 0, 0, 0.08);
+     --shadow-hover: 0 6px 14px rgba(0, 0, 0, 0.10);
 
      /* RADIUS */
      --radius-sm: 6px;
@@ -56,7 +55,6 @@
      /* TRANSITIONS */
      --transition-fast: 0.15s ease;
      --transition-normal: 0.25s ease;
-
  }
 
  body {
@@ -68,14 +66,13 @@
      min-height: 100vh;
      background: linear-gradient(180deg,
              #ffffff 0%,
-             #f8fafc 40%,
-             #f3e8ff 100%);
+             #f4f6f8 100%);
      background-attachment: fixed;
  }
 
  .container {
      width: 100%;
-     max-width: 420px;
+     max-width: 460px;
      padding: 40px 20px;
  }
 
@@ -97,7 +94,7 @@
      margin-bottom: 0;
      padding: 15px;
      font-size: 25px;
-     font-weight: 600px;
+     font-weight: 600;
      letter-spacing: -0.3px;
  }
 

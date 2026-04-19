@@ -229,8 +229,8 @@ function toggleComplete(id) {
 
 // Remove a todo from state
 function deleteTodo(id) {
-    /* You store id in JS → copy it into DOM using data-id → use it later to find that exact element.
-    li.dataset.id = todo.id; in render function*/
+    
+    // since we set li.dataset.id = todo.id
     const li = document.querySelector(`li[data-id="${id}"]`);
     if (!li) return;
 

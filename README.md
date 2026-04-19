@@ -23,7 +23,7 @@ CSS
 JavaScript
 LocalStorage
 
-Screenshot:
+## Screenshot:
 ![Todo App Screenshot](todo-preview.png)
 
 Author:
